@@ -32,13 +32,17 @@ export const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://github.com/Vaishnavi-Soni-12" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/vaishnavi-soni-27b461331" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Linkedin className="w-5 h-5" />

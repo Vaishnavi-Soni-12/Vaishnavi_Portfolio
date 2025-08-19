@@ -126,15 +126,51 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Floating Card Animation */
+  /* Floating Card Animation with Glow */
   .float-card {
     @apply transition-all duration-300 ease-out;
     box-shadow: var(--shadow-soft);
   }
   
   .float-card:hover {
-    @apply -translate-y-2;
-    box-shadow: var(--shadow-float);
+    @apply -translate-y-2 scale-105;
+    box-shadow: var(--shadow-float), var(--shadow-glow);
+  }
+
+  /* Live Background Animations */
+  .live-bg {
+    background: linear-gradient(-45deg, 
+      hsl(var(--primary) / 0.05), 
+      hsl(var(--accent) / 0.05), 
+      hsl(var(--tertiary) / 0.05), 
+      hsl(var(--secondary) / 0.05)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  .floating-shapes::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background: hsl(var(--primary) / 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-shapes::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+    width: 80px;
+    height: 80px;
+    background: hsl(var(--accent) / 0.1);
+    border-radius: 30%;
+    animation: float 8s ease-in-out infinite reverse;
   }
 
   /* Gradient Backgrounds */
@@ -187,4 +223,15 @@ All colors MUST be HSL.
   to {
     @apply opacity-100 translate-y-0;
   }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
 }

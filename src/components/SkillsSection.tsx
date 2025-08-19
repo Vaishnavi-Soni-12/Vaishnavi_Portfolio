@@ -36,8 +36,8 @@ export const SkillsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/30">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-padding live-bg floating-shapes relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
             Skills & Expertise

@@ -33,8 +33,8 @@ export const EducationSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/30">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-padding live-bg floating-shapes relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
             <GraduationCap className="w-8 h-8 text-primary" />
