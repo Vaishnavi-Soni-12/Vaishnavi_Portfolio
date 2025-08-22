@@ -33,8 +33,8 @@ export const EducationSection = () => {
   ];
 
   return (
-    <section className="section-padding live-bg floating-shapes relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
+    <div className="section-padding relative z-10">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
             <GraduationCap className="w-8 h-8 text-primary" />
@@ -43,7 +43,7 @@ export const EducationSection = () => {
             </h2>
           </div>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A journey of continuous learning and academic excellence
+            Academic foundation and continuous learning journey
           </p>
         </div>
 
@@ -103,6 +103,6 @@ export const EducationSection = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };

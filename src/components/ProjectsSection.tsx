@@ -1,11 +1,26 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Calendar, Zap } from "lucide-react";
+import { Github, Calendar, Zap } from "lucide-react";
+import { ProjectModal } from "@/components/ProjectModal";
 import aiIllustration from "@/assets/ai-illustration.jpg";
 import codeIcon from "@/assets/code-icon.jpg";
 
 export const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (project: any) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleGitHubClick = (projectTitle: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const repoName = projectTitle.toLowerCase().replace(/\s+/g, '-');
+    window.open(`https://github.com/Vaishnavi-Soni-12/${repoName}`, '_blank');
+  };
   const projects = [
     {
       title: "SheCure",
@@ -67,11 +82,15 @@ export const ProjectsSection = () => {
         {/* Featured Projects Grid */}
         <div className="masonry-grid mb-12">
           {projects.filter(p => p.featured).map((project, index) => (
-            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
-              index === 0 ? 'delay-100' : 
-              index === 1 ? 'delay-200' : 
-              'delay-300'
-            }`}>
+            <Card 
+              key={index} 
+              className={`float-card bg-gradient-card border-0 fade-in cursor-pointer ${
+                index === 0 ? 'delay-100' : 
+                index === 1 ? 'delay-200' : 
+                'delay-300'
+              }`}
+              onClick={() => handleProjectClick(project)}
+            >
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -105,13 +124,14 @@ export const ProjectsSection = () => {
                 </div>
                 
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={(e) => handleGitHubClick(project.title, e)}
+                  >
                     <Github className="w-4 h-4 mr-2" />
                     Code
-                  </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
                   </Button>
                 </div>
               </CardContent>
@@ -122,9 +142,13 @@ export const ProjectsSection = () => {
         {/* Other Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.filter(p => !p.featured).map((project, index) => (
-            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
-              index === 0 ? 'delay-300' : 'delay-400'
-            }`}>
+            <Card 
+              key={index} 
+              className={`float-card bg-gradient-card border-0 fade-in cursor-pointer ${
+                index === 0 ? 'delay-300' : 'delay-400'
+              }`}
+              onClick={() => handleProjectClick(project)}
+            >
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar className="w-4 h-4 text-muted-foreground" />
@@ -146,19 +170,26 @@ export const ProjectsSection = () => {
                 </div>
                 
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={(e) => handleGitHubClick(project.title, e)}
+                  >
                     <Github className="w-3 h-3 mr-2" />
                     Code
-                  </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <ExternalLink className="w-3 h-3 mr-2" />
-                    Demo
                   </Button>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+        
+        <ProjectModal 
+          project={selectedProject}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     </section>
   );
