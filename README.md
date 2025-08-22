@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
+## 🌐 Vaishnavi Portfolio
 
-## Project info
+✨ A modern, responsive portfolio website showcasing creativity, clean UI, and technical skills.
 
-**URL**: https://lovable.dev/projects/618245bb-e823-4904-9efd-544dd09197aa
+## 📖 Overview
 
-## How can I edit this code?
+This repository contains Vaishnavi’s personal portfolio—a sleek and dynamic web application built using modern frontend tools. It highlights projects, skills, and contact information in an elegant, professional way.
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+⚡ Vite – Super-fast bundler for development and builds
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/618245bb-e823-4904-9efd-544dd09197aa) and start prompting.
+🟦 TypeScript – Type-safe and scalable coding
 
-Changes made via Lovable will be committed automatically to this repo.
+⚛️ React – Component-based, interactive UI
 
-**Use your preferred IDE**
+🎨 Tailwind CSS – Utility-first responsive styling
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🧩 shadcn/ui – Prebuilt customizable UI components
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📂 Repository Structure
+├── public/
 
-Follow these steps:
+├── src/
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+│   ├── components/       # Reusable UI components
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+│   ├── pages/            # Main pages (Home, About, Projects, Contact)
 
-# Step 3: Install the necessary dependencies.
-npm i
+│   └── assets/           # Images, icons, fonts
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+├── package.json
+
+├── tsconfig.json
+
+└── vite.config.ts        # Configurations
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+ 1️⃣ Clone the repository
+git clone https://github.com/Vaishnavi-Soni-12/Vaishnavi_Portfolio.git
+
+ 2️⃣ Navigate into the folder
+cd Vaishnavi_Portfolio
+
+ 3️⃣ Install dependencies
+npm install
+
+ 4️⃣ Start development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Now open 👉 http://localhost:5173/ to preview the site.
 
-**Use GitHub Codespaces**
+## 🌍 Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To create a production build:
 
-## What technologies are used for this project?
+npm run build
 
-This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Host the dist/ folder on platforms like Vercel, Netlify, or GitHub Pages.
 
-## How can I deploy this project?
+## ✨ Features
 
-Simply open [Lovable](https://lovable.dev/projects/618245bb-e823-4904-9efd-544dd09197aa) and click on Share -> Publish.
+✅ Responsive Design – Works on desktop, tablet, and mobile
+✅ Reusable Components – Modular and maintainable codebase
+✅ Type-Safe Development – Built with TypeScript
+✅ Modern UI – Clean layout with Tailwind + shadcn-ui
+✅ Fast & Lightweight – Powered by Vite for quick builds
 
-## Can I connect a custom domain to my Lovable project?
+## 🤝 Contributing
 
-Yes, you can!
+Contributions are welcome! 🎉
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+🐞 Report bugs
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+💡 Suggest features
+
+🔧 Submit pull requests
+
+## 📬 Contact
+
+📧 Email: vaishnavisoni1209@gmail.com
+
+💼 LinkedIn: https://www.linkedin.com/in/vaishnavi-soni-27b461331
+
+
+## 📜 License
+
+Licensed under the MIT License.
