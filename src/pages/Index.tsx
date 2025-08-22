@@ -1,3 +1,4 @@
+import { AppSidebar } from "@/components/AppSidebar";
 import { HeroSection } from "@/components/HeroSection";
 import { EducationSection } from "@/components/EducationSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
