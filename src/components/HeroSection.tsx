@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import profilePlaceholder from "@/assets/profile-placeholder.jpg";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +36,7 @@ export const HeroSection = () => {
         <div className={`mb-6 sm:mb-8 transition-all duration-1000 ${isVisible ? 'fade-in' : ''}`}>
           <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8">
             <img 
-              src={profilePlaceholder}
+              src={profilePhoto}
               alt="Vaishnavi Soni"
               className="w-full h-full rounded-full object-cover float-card border-2 sm:border-4 border-white/50"
             />

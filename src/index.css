@@ -159,13 +159,32 @@ All colors MUST be HSL.
   /* Live Background Animations */
   .live-bg {
     background: linear-gradient(-45deg, 
-      hsl(var(--primary) / 0.05), 
-      hsl(var(--accent) / 0.05), 
-      hsl(var(--tertiary) / 0.05), 
-      hsl(var(--secondary) / 0.05)
+      hsl(var(--background)), 
+      hsl(var(--primary) / 0.08),
+      hsl(var(--accent) / 0.1), 
+      hsl(var(--tertiary) / 0.08),
+      hsl(var(--secondary) / 0.06),
+      hsl(var(--background))
     );
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: gradientShift 20s ease infinite;
+    position: relative;
+  }
+
+  .live-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--tertiary) / 0.08) 0%, transparent 50%);
+    animation: floatingOrbs 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .floating-shapes::before {
@@ -253,8 +272,17 @@ All colors MUST be HSL.
 
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
+  25% { background-position: 100% 100%; }
   50% { background-position: 100% 50%; }
+  75% { background-position: 0% 0%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes floatingOrbs {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, -30px) rotate(90deg); }
+  50% { transform: translate(-20px, 20px) rotate(180deg); }
+  75% { transform: translate(-30px, -20px) rotate(270deg); }
 }
 
 @keyframes float {

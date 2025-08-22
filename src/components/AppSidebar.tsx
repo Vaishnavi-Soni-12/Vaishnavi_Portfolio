@@ -27,9 +27,6 @@ const socialLinks = [
 ];
 
 export function AppSidebar() {
-  const { state } = useSidebar();
-  const isCollapsed = state === "collapsed";
-
   const handleNavClick = (url: string) => {
     if (url.startsWith('#')) {
       const element = document.querySelector(url);
@@ -40,7 +37,7 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar className={`border-r border-border/50 bg-gradient-card transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
+    <Sidebar className="fixed left-0 top-0 h-full w-16 border-r border-border/50 bg-gradient-card/80 backdrop-blur-md z-50">
       <SidebarHeader className="p-3">
         <div className="flex items-center justify-center">
           <div className="w-8 h-8 rounded-full bg-gradient-hero flex items-center justify-center">
@@ -54,14 +51,22 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {navigationItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.title} className="relative group">
                   <SidebarMenuButton 
                     onClick={() => handleNavClick(item.url)}
-                    className="sidebar-icon-only hover:bg-primary/10 hover:text-primary transition-colors mb-2"
+                    className="w-12 h-12 p-0 justify-center hover:bg-primary/20 hover:text-primary transition-all duration-300 mb-2 rounded-lg border border-transparent hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20"
                   >
                     <item.icon className="w-5 h-5" />
-                    <span className="sidebar-tooltip">{item.title}</span>
                   </SidebarMenuButton>
+                  
+                  {/* Glass tooltip */}
+                  <div className="absolute left-16 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 shadow-lg">
+                      <span className="text-sm font-medium text-white whitespace-nowrap">
+                        {item.title}
+                      </span>
+                    </div>
+                  </div>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -74,14 +79,22 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {socialLinks.map((link) => (
-                <SidebarMenuItem key={link.title}>
+                <SidebarMenuItem key={link.title} className="relative group">
                   <SidebarMenuButton 
                     onClick={() => handleNavClick(link.url)}
-                    className="sidebar-icon-only hover:bg-accent/10 hover:text-accent transition-colors mb-2"
+                    className="w-12 h-12 p-0 justify-center hover:bg-accent/20 hover:text-accent transition-all duration-300 mb-2 rounded-lg border border-transparent hover:border-accent/30 hover:shadow-lg hover:shadow-accent/20"
                   >
                     <link.icon className="w-5 h-5" />
-                    <span className="sidebar-tooltip">{link.title}</span>
                   </SidebarMenuButton>
+                  
+                  {/* Glass tooltip */}
+                  <div className="absolute left-16 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 shadow-lg">
+                      <span className="text-sm font-medium text-white whitespace-nowrap">
+                        {link.title}
+                      </span>
+                    </div>
+                  </div>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -90,8 +103,8 @@ export function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter className="p-3">
-        <div className="text-xs text-muted-foreground text-center rotate-90 transform origin-center">
-          © 2024
+        <div className="text-xs text-muted-foreground text-center">
+          <div className="transform -rotate-90 origin-center">© 2024</div>
         </div>
       </SidebarFooter>
     </Sidebar>
