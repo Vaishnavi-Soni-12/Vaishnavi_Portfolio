@@ -11,7 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 const Index = () => {
   return (
     <SidebarProvider>
-      <div className="min-h-screen w-full live-bg">
+      <div className="min-h-screen w-full bg-background">
         <AppSidebar />
         
         <main className="ml-0 sm:ml-16 overflow-x-hidden">
