@@ -11,19 +11,19 @@ import { Toaster } from "@/components/ui/toaster";
 const Index = () => {
   return (
     <SidebarProvider>
-      <div className="min-h-screen w-full flex">
+      <div className="min-h-screen w-full flex page-fade-in">
         <AppSidebar />
         
         <div className="flex-1 flex flex-col">
-          <header className="sticky top-0 z-50 h-12 flex items-center border-b border-border/50 bg-background/80 backdrop-blur-md">
+          <header className="sticky top-0 z-50 h-12 flex items-center border-b border-border/50 bg-background/80 backdrop-blur-md lg:h-16">
             <SidebarTrigger className="ml-4" />
-            <h1 className="ml-4 font-semibold bg-gradient-hero bg-clip-text text-transparent">
+            <h1 className="ml-4 font-semibold bg-gradient-hero bg-clip-text text-transparent text-sm lg:text-base">
               Portfolio
             </h1>
           </header>
           
-          <main className="flex-1">
-            <section id="home">
+          <main className="flex-1 overflow-x-hidden">
+            <section id="home" className="min-h-screen">
               <HeroSection />
             </section>
             
