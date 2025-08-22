@@ -137,9 +137,9 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-float), var(--shadow-glow);
   }
 
-  /* Landing page fade effect */
+  /* Landing page fade effect - Fixed to ensure content is visible */
   .page-fade-in {
-    @apply opacity-0;
+    @apply opacity-100;
     animation: pageFadeIn 1s ease-out forwards;
   }
 
@@ -237,9 +237,9 @@ All colors MUST be HSL.
     grid-auto-rows: auto;
   }
 
-  /* Smooth fade-in animation */
+  /* Smooth fade-in animation - Fixed to ensure content shows */
   .fade-in {
-    @apply opacity-0 translate-y-4;
+    @apply opacity-100 translate-y-0;
     animation: fadeIn 0.6s ease-out forwards;
   }
 
