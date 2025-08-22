@@ -14,28 +14,30 @@ const Index = () => {
       <div className="min-h-screen w-full page-fade-in live-bg">
         <AppSidebar />
         
-        <main className="ml-16 overflow-x-hidden">
-          <section id="home" className="min-h-screen">
-            <HeroSection />
-          </section>
-          
-          <section id="education">
-            <EducationSection />
-          </section>
-          
-          <section id="projects">
-            <ProjectsSection />
-          </section>
-          
-          <section id="skills">
-            <SkillsSection />
-          </section>
-          
-          <section id="contact">
-            <ContactSection />
-          </section>
-          
-          <Footer />
+        <main className="ml-0 sm:ml-16 overflow-x-hidden">
+          <div className="min-h-screen w-full">
+            <section id="home" className="min-h-screen">
+              <HeroSection />
+            </section>
+            
+            <section id="education">
+              <EducationSection />
+            </section>
+            
+            <section id="projects">
+              <ProjectsSection />
+            </section>
+            
+            <section id="skills">
+              <SkillsSection />
+            </section>
+            
+            <section id="contact">
+              <ContactSection />
+            </section>
+            
+            <Footer />
+          </div>
         </main>
       </div>
       <Toaster />

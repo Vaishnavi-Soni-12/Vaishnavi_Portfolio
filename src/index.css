@@ -243,15 +243,34 @@ All colors MUST be HSL.
     animation: fadeIn 0.6s ease-out forwards;
   }
 
-  /* Section spacing */
+  /* Section spacing with improved mobile responsiveness */
   .section-padding {
-    @apply py-12 px-4 sm:py-16 sm:px-6 md:px-12 lg:px-24;
+    @apply py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 lg:py-20 lg:px-12 xl:px-16;
   }
 
-  /* Responsive masonry grid */
+  /* Responsive masonry grid with better mobile behavior */
   @media (max-width: 640px) {
     .masonry-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .section-padding {
+      @apply py-6 px-3;
+    }
+    
+    .float-card {
+      @apply transition-none;
+    }
+    
+    .float-card:hover {
+      @apply translate-y-0 scale-100;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bg-gradient-hero {
+      background-size: 200% 200%;
     }
   }
 }
@@ -262,6 +281,7 @@ All colors MUST be HSL.
   .delay-200 { animation-delay: 0.2s; }
   .delay-300 { animation-delay: 0.3s; }
   .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
 }
 
 @keyframes fadeIn {

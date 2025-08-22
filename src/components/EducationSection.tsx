@@ -49,7 +49,11 @@ export const EducationSection = () => {
 
         <div className="space-y-6">
           {education.map((edu, index) => (
-            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in delay-${(index + 1) * 100}`}>
+            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
+              index === 0 ? 'delay-100' : 
+              index === 1 ? 'delay-200' : 
+              'delay-300'
+            }`}>
               <CardContent className="p-8">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex-1">

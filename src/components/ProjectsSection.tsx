@@ -67,7 +67,11 @@ export const ProjectsSection = () => {
         {/* Featured Projects Grid */}
         <div className="masonry-grid mb-12">
           {projects.filter(p => p.featured).map((project, index) => (
-            <Card key={index} className={`float-card bg-gradient-card border-0 overflow-hidden fade-in delay-${(index + 1) * 100}`}>
+            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
+              index === 0 ? 'delay-100' : 
+              index === 1 ? 'delay-200' : 
+              'delay-300'
+            }`}>
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -118,7 +122,9 @@ export const ProjectsSection = () => {
         {/* Other Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.filter(p => !p.featured).map((project, index) => (
-            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in delay-${(index + 3) * 100}`}>
+            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
+              index === 0 ? 'delay-300' : 'delay-400'
+            }`}>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar className="w-4 h-4 text-muted-foreground" />

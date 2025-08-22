@@ -1,4 +1,5 @@
 import { Home, GraduationCap, Briefcase, Code, Mail, Github, Linkedin } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 import { 
   Sidebar, 
   SidebarContent, 
@@ -37,11 +38,18 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar className="fixed left-0 top-0 h-full w-16 border-r border-border/50 bg-gradient-card/80 backdrop-blur-md z-50">
+    <Sidebar className="fixed left-0 top-0 h-full w-16 border-r border-border/50 bg-gradient-card/80 backdrop-blur-md z-50 hidden sm:flex">
       <SidebarHeader className="p-3">
         <div className="flex items-center justify-center">
-          <div className="w-8 h-8 rounded-full bg-gradient-hero flex items-center justify-center">
-            <span className="text-white font-bold text-sm">VS</span>
+          <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-primary/30">
+            <img 
+              src={profilePhoto} 
+              alt="Vaishnavi Soni"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23666' d='M16 2a14 14 0 1014 14A14.016 14.016 0 0016 2zm0 4a4.5 4.5 0 11-4.5 4.5A4.505 4.505 0 0116 6zm8 16.5a11.985 11.985 0 01-16 0 7.5 7.5 0 0115 0z'/%3E%3C/svg%3E";
+              }}
+            />
           </div>
         </div>
       </SidebarHeader>

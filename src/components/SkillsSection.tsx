@@ -52,11 +52,26 @@ export const SkillsSection = () => {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={index} className={`float-card bg-gradient-card border-0 fade-in delay-${(index + 1) * 100}`}>
+              <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
+                index === 0 ? 'delay-100' : 
+                index === 1 ? 'delay-200' : 
+                index === 2 ? 'delay-300' :
+                'delay-400'
+              }`}>
                 <CardContent className="p-6 text-center">
                   <div className="mb-4">
-                    <div className={`inline-flex p-3 rounded-full bg-${category.color}/10 mb-3`}>
-                      <IconComponent className={`w-6 h-6 text-${category.color}`} />
+                    <div className={`inline-flex p-3 rounded-full mb-3 ${
+                      category.color === 'primary' ? 'bg-primary/10' :
+                      category.color === 'accent' ? 'bg-accent/10' :
+                      category.color === 'tertiary' ? 'bg-tertiary/10' :
+                      'bg-secondary/10'
+                    }`}>
+                      <IconComponent className={`w-6 h-6 ${
+                        category.color === 'primary' ? 'text-primary' :
+                        category.color === 'accent' ? 'text-accent' :
+                        category.color === 'tertiary' ? 'text-tertiary' :
+                        'text-secondary'
+                      }`} />
                     </div>
                     <h3 className="font-semibold text-lg mb-4">{category.title}</h3>
                   </div>
@@ -66,7 +81,12 @@ export const SkillsSection = () => {
                       <Badge 
                         key={skillIndex} 
                         variant="outline" 
-                        className={`block border-${category.color}/30 text-${category.color} text-sm py-1`}
+                        className={`block text-sm py-1 ${
+                          category.color === 'primary' ? 'border-primary/30 text-primary' :
+                          category.color === 'accent' ? 'border-accent/30 text-accent' :
+                          category.color === 'tertiary' ? 'border-tertiary/30 text-tertiary' :
+                          'border-secondary/30 text-secondary'
+                        }`}
                       >
                         {skill}
                       </Badge>

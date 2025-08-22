@@ -12,7 +12,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-2 sm:px-4 md:px-6">
       {/* Background */}
       <div 
         className="absolute inset-0 opacity-20"
@@ -24,21 +24,21 @@ export const HeroSection = () => {
         }}
       />
       
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-4 sm:left-20 w-12 h-12 sm:w-16 sm:h-16 bg-primary/20 rounded-full blur-lg animate-pulse" />
-        <div className="absolute top-40 right-8 sm:right-32 w-16 h-16 sm:w-24 sm:h-24 bg-accent/20 rounded-full blur-lg animate-pulse delay-100" />
-        <div className="absolute bottom-32 left-8 sm:left-40 w-14 h-14 sm:w-20 sm:h-20 bg-tertiary/20 rounded-full blur-lg animate-pulse delay-200" />
+      {/* Floating Elements - Hidden on very small screens */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
+        <div className="absolute top-16 sm:top-20 left-4 sm:left-20 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-primary/20 rounded-full blur-lg animate-pulse" />
+        <div className="absolute top-32 sm:top-40 right-6 sm:right-8 md:right-32 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-accent/20 rounded-full blur-lg animate-pulse delay-100" />
+        <div className="absolute bottom-24 sm:bottom-32 left-6 sm:left-8 md:left-40 w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 bg-tertiary/20 rounded-full blur-lg animate-pulse delay-200" />
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-2 sm:px-4 max-w-4xl mx-auto w-full">
         {/* Profile Image */}
-        <div className={`mb-6 sm:mb-8 transition-all duration-1000 ${isVisible ? 'fade-in' : ''}`}>
-          <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8">
+        <div className={`mb-4 sm:mb-6 md:mb-8 transition-all duration-1000 ${isVisible ? 'fade-in' : ''}`}>
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 mx-auto mb-4 sm:mb-6 md:mb-8">
             <img 
               src={profilePhoto}
               alt="Vaishnavi Soni"
-              className="w-full h-full rounded-full object-cover float-card border-2 sm:border-4 border-white/50"
+              className="w-full h-full rounded-full object-cover float-card border-2 sm:border-2 md:border-4 border-white/50"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-20" />
           </div>
@@ -46,33 +46,33 @@ export const HeroSection = () => {
 
         {/* Main Content */}
         <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'fade-in' : ''}`}>
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-hero bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight">
             Vaishnavi Soni
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-light">
+          <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-2 sm:mb-3 md:mb-4 font-light">
             AI/ML Engineer & Full Stack Developer
           </p>
-          <p className="text-sm sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-lg text-muted-foreground mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             Passionate about creating intelligent solutions that bridge technology and human needs. 
             Currently pursuing B.Tech in Computer Science with a focus on Artificial Intelligence.
           </p>
         </div>
 
         {/* CTA Buttons */}
-        <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 transition-all duration-1000 delay-400 ${isVisible ? 'fade-in' : ''}`}>
+        <div className={`flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center mb-6 sm:mb-8 md:mb-12 transition-all duration-1000 delay-400 ${isVisible ? 'fade-in' : ''}`}>
           <Button 
             variant="default" 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground float-card w-full sm:w-auto"
+            size="sm" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground float-card w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6"
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <Mail className="w-4 h-4 mr-2" />
+            <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             Contact Me
           </Button>
           <Button 
             variant="outline" 
-            size="lg" 
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground float-card w-full sm:w-auto"
+            size="sm" 
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground float-card w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6"
             onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View Projects
@@ -80,14 +80,14 @@ export const HeroSection = () => {
         </div>
 
         {/* Social Links */}
-        <div className={`flex gap-4 sm:gap-6 justify-center mb-8 sm:mb-12 transition-all duration-1000 delay-500 ${isVisible ? 'fade-in' : ''}`}>
+        <div className={`flex gap-3 sm:gap-4 md:gap-6 justify-center mb-6 sm:mb-8 md:mb-12 transition-all duration-1000 delay-500 ${isVisible ? 'fade-in' : ''}`}>
           <a 
             href="https://github.com/Vaishnavi-Soni-12" 
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm float-card hover:bg-primary hover:text-primary-foreground transition-colors"
           >
-            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Github className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </a>
           <a 
             href="https://www.linkedin.com/in/vaishnavi-soni-27b461331" 
@@ -95,19 +95,19 @@ export const HeroSection = () => {
             rel="noopener noreferrer"
             className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm float-card hover:bg-primary hover:text-primary-foreground transition-colors"
           >
-            <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </a>
           <a 
             href="mailto:vaishnavi.soni@example.com" 
             className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm float-card hover:bg-primary hover:text-primary-foreground transition-colors"
           >
-            <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Mail className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </a>
         </div>
 
         {/* Scroll Indicator */}
         <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'fade-in' : ''}`}>
-          <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 mx-auto text-muted-foreground animate-bounce" />
+          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mx-auto text-muted-foreground animate-bounce" />
         </div>
       </div>
     </section>
