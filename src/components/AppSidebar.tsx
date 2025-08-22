@@ -1,6 +1,6 @@
 import { Home, GraduationCap, Briefcase, Code, Mail, Github, Linkedin } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader, SidebarFooter, useSidebar } from "@/components/ui/sidebar";
+// Removed Sidebar imports as we're now using floating buttons
 const navigationItems = [{
   title: "Home",
   url: "#home",
@@ -84,11 +84,5 @@ export function AppSidebar() {
           </div>
         </div>
       ))}
-
-      <SidebarFooter className="p-3">
-        <div className="text-xs text-muted-foreground text-center">
-          
-        </div>
-      </SidebarFooter>
-    </Sidebar>;
+    </div>;
 }
