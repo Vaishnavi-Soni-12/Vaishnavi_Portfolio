@@ -1,35 +1,32 @@
-import { Home, GraduationCap, Briefcase, Code, Mail, Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
-// Removed Sidebar imports as we're now using floating buttons
 const navigationItems = [{
   title: "Home",
   url: "#home",
-  icon: Home
+  icon: "🏠"
 }, {
-  title: "Education",
+  title: "Education", 
   url: "#education",
-  icon: GraduationCap
+  icon: "🎓"
 }, {
   title: "Projects",
-  url: "#projects",
-  icon: Briefcase
+  url: "#projects", 
+  icon: "💼"
 }, {
   title: "Skills",
   url: "#skills",
-  icon: Code
+  icon: "💻"
 }, {
   title: "Contact",
   url: "#contact",
-  icon: Mail
+  icon: "✉️"
 }];
 const socialLinks = [{
   title: "LinkedIn",
   url: "https://www.linkedin.com/in/vaishnavi-soni-27b461331",
-  icon: Linkedin
+  icon: "💼"
 }, {
-  title: "GitHub",
+  title: "GitHub", 
   url: "https://github.com/Vaishnavi-Soni-12",
-  icon: Github
+  icon: "🐙"
 }];
 export function AppSidebar() {
   const handleNavClick = (url: string) => {
@@ -49,7 +46,7 @@ export function AppSidebar() {
             onClick={() => handleNavClick(item.url)}
             className="w-12 h-12 rounded-full bg-primary/10 backdrop-blur-md border border-primary/20 flex items-center justify-center text-primary hover:bg-primary/20 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
           >
-            <item.icon className="w-5 h-5" />
+            <span className="text-lg">{item.icon}</span>
           </button>
           
           {/* Aesthetic tooltip */}
@@ -71,7 +68,7 @@ export function AppSidebar() {
             onClick={() => handleNavClick(link.url)}
             className="w-12 h-12 rounded-full bg-accent/10 backdrop-blur-md border border-accent/20 flex items-center justify-center text-accent hover:bg-accent/20 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-accent/30"
           >
-            <link.icon className="w-5 h-5" />
+            <span className="text-lg">{link.icon}</span>
           </button>
           
           {/* Aesthetic tooltip */}
