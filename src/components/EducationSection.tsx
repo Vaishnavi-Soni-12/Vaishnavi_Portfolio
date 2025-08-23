@@ -33,8 +33,8 @@ export const EducationSection = () => {
   ];
 
   return (
-    <div className="section-padding relative z-10">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-padding live-bg floating-shapes relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
             <GraduationCap className="w-8 h-8 text-primary" />
@@ -49,7 +49,7 @@ export const EducationSection = () => {
 
         <div className="space-y-6">
           {education.map((edu, index) => (
-            <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
+            <Card key={index} className={`float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in ${
               index === 0 ? 'delay-100' : 
               index === 1 ? 'delay-200' : 
               'delay-300'
@@ -103,6 +103,6 @@ export const EducationSection = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

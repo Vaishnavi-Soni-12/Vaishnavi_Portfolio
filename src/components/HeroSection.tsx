@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-const profilePhoto = "/lovable-uploads/595ee6fd-a63b-4465-a3f0-944899a298ce.png";
+import profilePhoto from "@/assets/profile-photo-optimized.jpg";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);

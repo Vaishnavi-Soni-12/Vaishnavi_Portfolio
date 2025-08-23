@@ -86,10 +86,10 @@ export const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="space-y-6">
-            <Card className="float-card bg-gradient-card border-0 fade-in">
+            <Card className="float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-full bg-primary/10">
+                  <div className="p-3 rounded-full bg-primary/20 backdrop-blur-sm">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -100,10 +100,10 @@ export const ContactSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="float-card bg-gradient-card border-0 fade-in delay-100">
+            <Card className="float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in delay-100">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-full bg-accent/10">
+                  <div className="p-3 rounded-full bg-accent/20 backdrop-blur-sm">
                     <MapPin className="w-5 h-5 text-accent" />
                   </div>
                   <div>
@@ -114,10 +114,10 @@ export const ContactSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="float-card bg-gradient-card border-0 fade-in delay-200">
+            <Card className="float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in delay-200">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-full bg-tertiary/10">
+                  <div className="p-3 rounded-full bg-tertiary/20 backdrop-blur-sm">
                     <Phone className="w-5 h-5 text-tertiary" />
                   </div>
                   <div>
@@ -131,16 +131,16 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="float-card bg-gradient-card border-0 fade-in delay-300">
+            <Card className="float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in delay-300">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Input name="name" value={formData.name} onChange={handleInputChange} placeholder="Your Name" className="bg-white/50 border-primary/20 focus:border-primary" required />
-                    <Input name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="Your Email" className="bg-white/50 border-primary/20 focus:border-primary" required />
+                    <Input name="name" value={formData.name} onChange={handleInputChange} placeholder="Your Name" className="bg-white/30 backdrop-blur-sm border-white/30 focus:border-primary" required />
+                    <Input name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="Your Email" className="bg-white/30 backdrop-blur-sm border-white/30 focus:border-primary" required />
                   </div>
-                  <Input name="subject" value={formData.subject} onChange={handleInputChange} placeholder="Subject" className="bg-white/50 border-primary/20 focus:border-primary" required />
-                  <Textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Your Message" rows={6} className="bg-white/50 border-primary/20 focus:border-primary resize-none" required />
+                  <Input name="subject" value={formData.subject} onChange={handleInputChange} placeholder="Subject" className="bg-white/30 backdrop-blur-sm border-white/30 focus:border-primary" required />
+                  <Textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Your Message" rows={6} className="bg-white/30 backdrop-blur-sm border-white/30 focus:border-primary resize-none" required />
                   <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                     <Send className="w-4 h-4 mr-2" />
                     {isSubmitting ? 'Sending...' : 'Send Message'}

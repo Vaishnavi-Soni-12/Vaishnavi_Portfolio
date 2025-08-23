@@ -84,7 +84,7 @@ export const ProjectsSection = () => {
           {projects.filter(p => p.featured).map((project, index) => (
             <Card 
               key={index} 
-              className={`float-card bg-gradient-card border-0 fade-in cursor-pointer ${
+              className={`float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in cursor-pointer ${
                 index === 0 ? 'delay-100' : 
                 index === 1 ? 'delay-200' : 
                 'delay-300'
@@ -144,7 +144,7 @@ export const ProjectsSection = () => {
           {projects.filter(p => !p.featured).map((project, index) => (
             <Card 
               key={index} 
-              className={`float-card bg-gradient-card border-0 fade-in cursor-pointer ${
+              className={`float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in cursor-pointer ${
                 index === 0 ? 'delay-300' : 'delay-400'
               }`}
               onClick={() => handleProjectClick(project)}

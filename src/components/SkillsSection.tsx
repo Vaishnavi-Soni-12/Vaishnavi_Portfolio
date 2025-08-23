@@ -52,7 +52,7 @@ export const SkillsSection = () => {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={index} className={`float-card bg-gradient-card border-0 fade-in ${
+              <Card key={index} className={`float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in ${
                 index === 0 ? 'delay-100' : 
                 index === 1 ? 'delay-200' : 
                 index === 2 ? 'delay-300' :
@@ -99,10 +99,10 @@ export const SkillsSection = () => {
         </div>
 
         {/* Languages Section */}
-        <Card className="float-card bg-gradient-card border-0 fade-in delay-500">
+        <Card className="float-card bg-white/10 backdrop-blur-md border border-white/20 fade-in delay-500">
           <CardContent className="p-8">
             <div className="text-center mb-6">
-              <div className="inline-flex p-3 rounded-full bg-primary/10 mb-3">
+              <div className="inline-flex p-3 rounded-full bg-primary/20 backdrop-blur-sm mb-3">
                 <Globe className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-2xl font-bold mb-2">Languages</h3>
@@ -111,9 +111,9 @@ export const SkillsSection = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {languages.map((lang, index) => (
-                <div key={index} className="text-center p-4 rounded-lg bg-white/50">
+                <div key={index} className="text-center p-4 rounded-lg bg-white/20 backdrop-blur-sm">
                   <h4 className="font-semibold text-lg text-primary mb-2">{lang.name}</h4>
-                  <Badge variant="outline" className="border-primary/30 text-primary">
+                  <Badge variant="outline" className="border-primary/30 text-primary bg-white/10 backdrop-blur-sm">
                     {lang.level}
                   </Badge>
                 </div>
