@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import profilePhoto from "@/assets/profile-photo-optimized.jpg";
+import profilePhoto from "@/assets/profile-photo-new.jpg";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -76,6 +76,14 @@ export const HeroSection = () => {
             onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View Projects
+          </Button>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground float-card w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6"
+            onClick={() => window.open('https://drive.google.com/uc?export=download&id=1HzV0L9HfKTrrlXH6UWaNuwu2nVyaPbOk', '_blank')}
+          >
+            Download Resume
           </Button>
         </div>
 

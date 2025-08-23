@@ -32,7 +32,8 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
+      // Save to database
+      const { error: dbError } = await supabase
         .from('contact_messages')
         .insert([
           {
@@ -43,8 +44,22 @@ export const ContactSection = () => {
           }
         ]);
 
-      if (error) {
-        throw error;
+      if (dbError) {
+        throw dbError;
+      }
+
+      // Send email
+      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        }
+      });
+
+      if (emailError) {
+        console.error('Email error:', emailError);
       }
 
       toast({
