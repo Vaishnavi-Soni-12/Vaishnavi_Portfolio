@@ -36,7 +36,7 @@ export const HeroSection = () => {
         <div className={`mb-4 sm:mb-6 md:mb-8 transition-all duration-1000 ${isVisible ? 'fade-in' : ''}`}>
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 mx-auto mb-4 sm:mb-6 md:mb-8">
             <img 
-              src={profilePhoto}
+              src="/lovable-uploads/52aee715-2b3a-41ff-bfa2-ec2d24f675b8.png"
               alt="Vaishnavi Soni"
               className="w-full h-full rounded-full object-cover float-card border-2 sm:border-2 md:border-4 border-white/50"
             />
@@ -81,7 +81,7 @@ export const HeroSection = () => {
             variant="outline" 
             size="sm" 
             className="border-accent text-accent hover:bg-accent hover:text-accent-foreground float-card w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6"
-            onClick={() => window.open('https://drive.google.com/uc?export=download&id=1HzV0L9HfKTrrlXH6UWaNuwu2nVyaPbOk', '_blank')}
+            onClick={() => window.open('https://drive.google.com/file/d/1HzV0L9HfKTrrlXH6UWaNuwu2nVyaPbOk/view?usp=drive_link', '_blank')}
           >
             Download Resume
           </Button>
